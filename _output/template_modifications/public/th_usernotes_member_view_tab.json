@@ -1,0 +1,9 @@
+{
+    "template": "member_view",
+    "description": "Add member notes tab.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:tabs:end]-->",
+    "replace": "<xf:if is=\"$xf.visitor.hasPermission('th_usernotes', 'view')\">\n\t<a href=\"{{ link('members/th-usernotes', $user) }}\"\n\t   class=\"tabs-tab\"\n\t   id=\"th-usernotes\"\n\t   role=\"tab\">{{ phrase('th_usernotes_notes') }}</a>\n</xf:if>\n$0"
+}

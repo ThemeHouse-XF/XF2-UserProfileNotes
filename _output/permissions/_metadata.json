@@ -1,0 +1,20 @@
+{
+    "th_usernotes-add.json": {
+        "hash": "d3ace5d7c98a094ae24753eba6830a21"
+    },
+    "th_usernotes-delete.json": {
+        "hash": "2d061d75c82f0a5b15f90d5adad6fddc"
+    },
+    "th_usernotes-delete_all.json": {
+        "hash": "de35dd22df3f2ee16e6a2023c5f44464"
+    },
+    "th_usernotes-edit.json": {
+        "hash": "22f603bbcd4f3d5f077cd9675abcc430"
+    },
+    "th_usernotes-edit_all.json": {
+        "hash": "90fdeae2e39a201c3a89c163da14e410"
+    },
+    "th_usernotes-view.json": {
+        "hash": "ce12c81aff17d532302feb82b8d0f3b5"
+    }
+}

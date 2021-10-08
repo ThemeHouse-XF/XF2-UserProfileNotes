@@ -1,0 +1,11 @@
+{
+    "route_type": "public",
+    "route_prefix": "members",
+    "sub_name": "th-usernotes",
+    "format": ":int<user_id,username>/th-usernotes/:int<user_note_id>",
+    "build_class": "",
+    "build_method": "",
+    "controller": "ThemeHouse\\UserNotes:UserNotes",
+    "context": "members",
+    "action_prefix": ""
+}

@@ -1,0 +1,17 @@
+{
+    "public/th_usernotes_edit.html": {
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "f5e07b03a7364a8ca4c1513ec9ea54d8"
+    },
+    "public/th_usernotes_edit_new_note.html": {
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "58aa9f6d19f42f72585c68e7545b0650"
+    },
+    "public/th_usernotes_list.html": {
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "e2d6ffc02808b7bb7198028574964d59"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "permission.th_usernotes_add.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "c83e94eee21ed53400e12bf47721e3ac"
+    },
+    "permission.th_usernotes_delete.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "499920f1cc4ebb46e270cd4502dd0fa4"
+    },
+    "permission.th_usernotes_delete_all.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "1be38ab0848c76c1d8536092d62d892b"
+    },
+    "permission.th_usernotes_edit.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "e0a936111117fd493a3084f07db6a808"
+    },
+    "permission.th_usernotes_edit_all.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "357426061a16a1a0db1d67193ec99706"
+    },
+    "permission.th_usernotes_view.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "e543ddf401baff9cef82a58c8cd65752"
+    },
+    "permission_interface.th_usernotes.txt": {
+        "global_cache": false,
+        "version_id": 1000070,
+        "version_string": "1.0.0",
+        "hash": "a64c18e7d6fb43f207c3d07165a47322"
+    },
+    "th_usernotes_add_note.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "50cd1871f950375eef4e2efce35366c6"
+    },
+    "th_usernotes_no_notes_for_this_user_yet.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "4aeb8d197606dd38fdbbbbcfa16fe558"
+    },
+    "th_usernotes_note.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "3b0649c72650c313a357338dcdfb64ec"
+    },
+    "th_usernotes_notes.txt": {
+        "global_cache": false,
+        "version_id": 1000030,
+        "version_string": "1.0.0 Beta",
+        "hash": "f4c6f851b00d5518bf888815de279aba"
+    }
+}

@@ -1,0 +1,25 @@
+<xf:title>{{ phrase('th_usernotes_edit_note') }}</xf:title>
+
+<xf:breadcrumb href="{{ link('members', $profileUser) }}">{$profileUser.username}</xf:breadcrumb>
+
+<xf:form action="{{ link('members/th-usernotes/save', $note) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<span class="u-anchorTarget js-editContainer"></span>
+
+			<xf:editorrow name="message"
+				value="{$note.message}"
+				rowtype="{{ $quickEdit ? 'fullWidth noLabel' : '' }}"
+				label="{{ phrase('message') }}"
+				data-min-height="{{ $quickEdit ? 40 : 100 }}"
+				rendereropts="{{ {'treatAsStructuredText': true} }}" />
+		</div>
+		<xf:submitrow icon="save" sticky="true" rowtype="{{ $quickEdit ? 'simple' : '' }}">
+			<xf:html>
+				<xf:if is="$quickEdit">
+					<xf:button class="js-cancelButton">{{ phrase('button.cancel') }}</xf:button>
+				</xf:if>
+			</xf:html>
+		</xf:submitrow>
+	</div>
+</xf:form>

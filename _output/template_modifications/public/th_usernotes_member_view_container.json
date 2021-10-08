@@ -1,0 +1,9 @@
+{
+    "template": "member_view",
+    "description": "Add member notes tab.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:tab_panes:end]-->",
+    "replace": "<xf:if is=\"$xf.visitor.hasPermission('th_usernotes', 'view')\">\n\t<li data-href=\"{{ link('members/th-usernotes', $user) }}\"\n\t\trole=\"tabpanel\" aria-labelledby=\"th-usernotes\">\n\t\t<div class=\"blockMessage\">{{ phrase('loading...') }}</div>\n\t</li>\n</xf:if>\n$0"
+}

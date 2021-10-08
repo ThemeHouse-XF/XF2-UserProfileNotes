@@ -1,0 +1,116 @@
+<xf:title>{{ phrase('th_usernotes_notes:') }} {$user.username}</xf:title>
+
+<xf:breadcrumb href="{{ link('members', $user) }}">{$user.username}</xf:breadcrumb>
+
+<div class="block block--messages">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:if is="$xf.visitor.hasPermission('th_usernotes', 'add')">
+				<xf:js src="xf/message.js" min="1" />
+
+				<xf:form action="{{ link('members/th-usernotes/save', $user) }}"
+						 ajax="true"
+						 class="message-spacer js-quickReply"
+						 data-xf-init="quick-reply"
+						 data-message-container="{$containerSelector}"
+						 data-ascending="0">
+
+					<xf:macro template="quick_reply_macros" name="body"
+							  arg-simple="{{ true }}"
+							  arg-placeholder="{{ phrase('th_usernotes_add_note...') }}"
+							  arg-submitText="{{ phrase('post_verb') }}"
+							  arg-showPreviewButton="{{ false }}"
+							  arg-minHeight="40"
+							  arg-deferred="{{ true }}"
+							  arg-simpleSubmit="{{ true }} " />
+				</xf:form>
+			</xf:if>
+
+			<xf:foreach loop="$notes" value="$note">
+				<xf:macro name="note"
+						  arg-note="{$note}" />
+			</xf:foreach>
+		</div>
+
+		<div class="block-outer block-outer--after">
+			<xf:pagenav page="{$page}" perpage="{$perPage}" total="{$total}"
+						link="members/th-usernotes" data="{$user}"
+						wrapperclass="block-outer-main" />
+			<div class="block-outer-opposite">
+			</div>
+		</div>
+	</div>
+</div>
+
+<xf:macro name="note"
+		  arg-note="!">
+
+	<xf:css src="message.less" />
+
+	<article class="message message--simple"
+			 data-author="{{ $note.User.username ?: $note.username }}"
+			 data-content="note-{$note.user_note_id}"
+			 id="js-note-{$note.user_note_id}">
+
+		<span class="u-anchorTarget" id="note-{$note.user_note_id}"></span>
+		<div class="message-inner">
+			<div class="message-cell message-cell--user">
+				<xf:macro template="message_macros"
+						  name="user_info_simple"
+						  arg-user="{$note.User}"
+						  arg-fallbackName="{$note.username}" />
+			</div>
+			<div class="message-cell message-cell--main">
+				<div class="message-main js-quickEditTarget">
+					<div class="message-content js-messageContent">
+						<header class="message-attribution message-attribution--plain">
+							<ul class="listInline listInline--bullet">
+								<li class="message-attribution-user">
+									<xf:avatar user="$note.User" size="xxs" />
+									<h4 class="attribution">
+										<xf:username user="$note.User"
+													 rich="true"
+													 defaultname="{$note.username}" />
+									</h4>
+								</li>
+								<li><a href="{{ link('members/th-usernotes', $note) }}" class="u-concealed" rel="nofollow"><xf:date time="$note.post_date" /></a></li>
+							</ul>
+						</header>
+
+						<article class="message-body">
+							{{ bb_code($note.message, 'th_usernote', $note) }}
+						</article>
+					</div>
+
+
+					<footer class="message-footer">
+						<div class="message-actionBar actionBar">
+
+							<xf:if contentcheck="true">
+								<div class="actionBar-set actionBar-set--internal">
+									<xf:contentcheck>
+										<xf:if is="$note.canEdit()">
+											<xf:js src="xf/message.js" min="1" />
+											<a href="{{ link('members/th-usernotes/edit', $note) }}"
+											   class="actionBar-action actionBar-action--edit actionBar-action--menuItem"
+											   data-xf-click="quick-edit"
+											   data-editor-target="#js-note-{$note.user_note_id} .js-quickEditTarget"
+											   data-no-inline-mod="{{ !$allowInlineMod ? 1 : 0 }}"
+											   data-menu-closer="true">{{ phrase('edit') }}</a>
+										</xf:if>
+										<xf:if is="$note.canDelete()">
+											<a href="{{ link('members/th-usernotes/delete', $note) }}"
+											   class="actionBar-action actionBar-action--delete actionBar-action--menuItem"
+											   data-xf-click="overlay">{{ phrase('delete') }}</a>
+										</xf:if>
+									</xf:contentcheck>
+								</div>
+							</xf:if>
+
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</article>
+</xf:macro>
